@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { RichText } from 'prismic-dom';
 import { useRouter } from 'next/router';
+import Prismic from '@prismicio/client';
 import Header from '../../components/Header';
 
 import { getPrismicClient } from '../../services/prismic';
@@ -50,11 +51,7 @@ export default function Post({ post }: PostProps) {
   return (
     <div>
       <Header />
-      <img
-        src={post.data.banner.url}
-        alt={post.data.banner.alt}
-        className={styles.img}
-      />
+      <img src={post.data.banner.url} className={styles.img} />
       <section className={commonStyles.container}>
         <h1 className={styles.title}>{post.data.title}</h1>
         <div className={styles.info}>
@@ -98,7 +95,9 @@ export default function Post({ post }: PostProps) {
 
 export const getStaticPaths = async () => {
   const prismic = getPrismicClient();
-  const posts = await prismic.query();
+  const posts = await prismic.query([
+    Prismic.Predicates.at('document.type', 'posts'),
+  ]);
   const paths = posts.results.map(post => ({
     params: {
       slug: post.uid,
@@ -113,7 +112,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async context => {
   const prismic = getPrismicClient();
-  const response = await prismic.getByUID('posts', context.params.slug);
+  const response = await prismic.getByUID('posts', context.params.slug, {});
 
   return {
     props: {
