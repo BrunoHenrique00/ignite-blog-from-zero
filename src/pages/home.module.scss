@@ -1,1 +1,40 @@
-// TODO
+.postTitle {
+    color: var(--white);
+    margin: 1rem 0;
+}
+
+.postInfo {
+    display: flex;
+
+    p , span {
+        color: var(--grey);
+    }
+
+    span {
+        margin-right: 1rem;
+    }
+
+    div {
+        display: flex;
+        margin: 1.25rem 0;
+    }
+
+    svg {
+        color: var(--light-grey);
+        margin-right: 1rem;
+    }
+}
+
+.postSubTitle {
+    color: var(--light-grey);
+}
+
+.button {
+    color: var(--pink);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    text-decoration: none;
+    background-color: var(--bg-grey);
+    margin-top: 4rem;
+}

@@ -4,4 +4,22 @@
   padding: 0;
 }
 
-// TODO
+:root {
+  --bg-grey: #1A1D23;
+  --pink: #FF57B2;
+  --light-grey: #C4C4C4;
+  --white: #F8F8F8;
+  --grey: #BBBBBB;
+}
+
+body , button {
+  font-family: 'Inter' , sans-serif;
+}
+
+html {
+  background-color: var(--bg-grey);
+}
+
+a {
+  text-decoration: none;
+}

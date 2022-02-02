@@ -1,1 +1,39 @@
-// TODO
+.img {
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    color: var(--grey);
+    div {
+        margin: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        span {
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.info div:first-child{
+    margin-left: 0;
+}
+
+.title {
+    color: var(--white);
+    margin: 4rem 0 1rem 0;
+    font-size: 3rem;
+}
+
+.subTitle {
+    color: var(--light-grey);
+    margin: 3rem 0;
+    font-size: 2rem;
+}
+
+.postContent {
+    color: var(--grey);
+    margin: 2rem 0;
+}
