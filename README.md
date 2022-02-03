@@ -2,6 +2,8 @@
 
 <h1>Criando um blog do zero com Prismic CMS 📰 | SpaceTraveling</h1>
 
+<a href="https://ignite-blog-from-zero.vercel.app/">Ver a aplicação</a>
+
 <h3>Nessa aplicação utilizamos diversos conceitos, segue alguns deles:</h3>
 
 <ul>
